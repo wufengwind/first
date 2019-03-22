@@ -1,0 +1,40 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="UTF-8"> 
+<title>Sign in or log in</title> 
+</head> 
+<body> 
+ <form action="enter.php" method="post" onsubmit="return enter()"> 
+ username<input type="text" name="username" id="username" data-options="validType:'mobile'"/><br>
+ password<input type="password" name="password" id="password" class="inputText"><br>
+ 
+ <input type="submit" value="log in"> <input type="button"  value="sign in" onclick="register();"> 
+ 
+ </form> 
+ 
+ <script type="text/javascript"> 
+ function enter() 
+ { 
+ var username=document.getElementById("username").value;//获取form中的用户名 
+ var password=document.getElementById("password").value; 
+ var regex=/^[/s]+$/;//声明一个判断用户名前后是否有空格的正则表达式 
+ if(regex.test(username)||username.length==0||username.length>10)//判定用户名的是否前后有空格或者用户名是否为空 
+ { 
+ alert("style error"); 
+ return false; 
+ } 
+ if(regex.test(password)||password.length==0||password.length<6)//同上述内容 
+ { 
+ alert("style erro"); 
+ return false; 
+ } 
+ return true; 
+ } 
+ function register() 
+ { 
+ window.location.href="register.html";//跳转到注册页面 
+ } 
+ </script>
+</body> 
+</html> 
